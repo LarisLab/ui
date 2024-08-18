@@ -61,51 +61,45 @@ const loaderVariants = cva('mr-2 animate-spin', {
         size: 'default',
     },
 })
-
-export interface ButtonProps
-    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-        VariantProps<typeof buttonVariants> {
-    asChild?: boolean
-    icon?: React.ReactNode
-    loading?: boolean
-    tooltip?: React.ReactNode
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        { className, variant, size, asChild = false, children, loading, icon, disabled, tooltip, type, ...props },
-        ref,
-    ) => {
-        const Comp = asChild ? Slot : 'button'
-
-        const button = (
-            <Comp
-                className={cn(buttonVariants({ variant, size, className }))}
-                ref={ref}
-                disabled={loading || disabled}
-                type={type || 'button'}
-                {...props}
-            >
-                {loading && <Loader2Icon className={cn(loaderVariants({ size }))} />}
-                {!loading && icon && <span className={cn(iconVariants({ size }))}>{icon}</span>}
-                <Slottable>{children}</Slottable>
-            </Comp>
-        )
-
-        if (tooltip) {
-            return (
-                <TooltipProvider delayDuration={200}>
-                    <Tooltip>
-                        <TooltipTrigger asChild>{button}</TooltipTrigger>
-                        <TooltipContent>{tooltip}</TooltipContent>
-                    </Tooltip>
-                </TooltipProvider>
-            )
+const Button = React.forwardRef<
+    HTMLButtonElement,
+    React.ComponentPropsWithoutRef<'button'> &
+        VariantProps<typeof buttonVariants> & {
+            asChild?: boolean
+            icon?: React.ReactNode
+            loading?: boolean
+            tooltip?: React.ReactNode
         }
+>(({ className, variant, size, asChild = false, children, loading, icon, disabled, tooltip, type, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
 
-        return button
-    },
-)
+    const button = (
+        <Comp
+            className={cn(buttonVariants({ variant, size, className }))}
+            ref={ref}
+            disabled={loading || disabled}
+            type={type || 'button'}
+            {...props}
+        >
+            {loading && <Loader2Icon className={cn(loaderVariants({ size }))} />}
+            {!loading && icon && <span className={cn(iconVariants({ size }))}>{icon}</span>}
+            <Slottable>{children}</Slottable>
+        </Comp>
+    )
+
+    if (tooltip) {
+        return (
+            <TooltipProvider delayDuration={200}>
+                <Tooltip>
+                    <TooltipTrigger asChild>{button}</TooltipTrigger>
+                    <TooltipContent>{tooltip}</TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+        )
+    }
+
+    return button
+})
 Button.displayName = 'Button'
 
 export { Button, buttonVariants }
