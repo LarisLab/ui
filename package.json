@@ -17,7 +17,7 @@
     "scripts": {
         "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "storybook": "storybook dev -p 6006",
+        "storybook": "storybook dev --no-open -p 6006",
         "build-storybook": "storybook build"
     },
     "dependencies": {
@@ -43,9 +43,11 @@
         "tailwind-merge": "^2.5.2"
     },
     "devDependencies": {
+        "@fontsource-variable/inter": "^5.0.20",
         "@storybook/addon-essentials": "^8.2.9",
         "@storybook/react": "^8.2.9",
         "@storybook/react-vite": "^8.2.9",
+        "@types/react-dom": "^18.3.0",
         "storybook": "^8.2.9",
         "tailwind": "^4.0.0",
         "tailwindcss-animate": "^1.0.7",
