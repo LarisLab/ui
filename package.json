@@ -12,13 +12,39 @@
     },
     "license": "MIT",
     "author": "Laris Lab",
+    "sideEffects": false,
     "type": "module",
-    "main": "dist/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/ui.modern.js",
+            "require": "./dist/ui.cjs",
+            "default": "./dist/ui.modern.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./plugin": {
+            "import": "./plugin.js",
+            "default": "./dist/plugin.js"
+        }
+    },
+    "main": "./dist/ui.cjs",
+    "module": "./dist/ui.esm.js",
+    "source": "src/index.ts",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "build": "tsc",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "storybook": "storybook dev --no-open -p 6006",
-        "build-storybook": "storybook build"
+        "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx --format modern,cjs,esm --css inline --compress false",
+        "build-storybook": "storybook build",
+        "storybook": "storybook dev --no-open -p 6006"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "prettier": {
+        "printWidth": 120,
+        "semi": false,
+        "singleQuote": true
     },
     "dependencies": {
         "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -48,6 +74,7 @@
         "@storybook/react": "^8.2.9",
         "@storybook/react-vite": "^8.2.9",
         "@types/react-dom": "^18.3.0",
+        "microbundle": "^0.15.1",
         "storybook": "^8.2.9",
         "tailwind": "^4.0.0",
         "tailwindcss-animate": "^1.0.7",
@@ -56,20 +83,9 @@
     "peerDependencies": {
         "react": "*",
         "react-dom": "*",
-        "tailwindcss": "*",
-        "tailwindcss-animate": "*"
+        "lucide-react": "*",
+        "tailwindcss": "*"
     },
-    "prettier": {
-        "printWidth": 120,
-        "semi": false,
-        "singleQuote": true
-    },
-    "engines": {
-        "node": ">=22.0.0"
-    },
-    "browserslist": [
-        "defaults"
-    ],
     "postcss": {
         "plugins": {
             "tailwindcss": {}
