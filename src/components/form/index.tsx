@@ -11,7 +11,10 @@ import {
     useFormState,
     useForm,
     useFieldArray,
+    useController,
+    useWatch,
 } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { classNames } from '../../utils/classnames'
 import { Label } from '../label'
@@ -179,11 +182,17 @@ const FormSubmit = React.forwardRef<HTMLButtonElement, Parameters<typeof Button>
 FormSubmit.displayName = 'FormSubmit'
 
 const useFormArray = useFieldArray
+const useFormController = useController
+const useFormWatch = useWatch
+const formZodResolver = zodResolver
 
 export {
     useForm,
     useFormField,
     useFormArray,
+    useFormController,
+    useFormWatch,
+    useFormState,
     Form,
     FormItem,
     FormLabel,
@@ -192,4 +201,5 @@ export {
     FormMessage,
     FormField,
     FormSubmit,
+    formZodResolver,
 }

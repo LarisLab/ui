@@ -22,8 +22,8 @@
             "types": "./dist/index.d.ts"
         },
         "./plugin": {
-            "import": "./plugin.js",
-            "default": "./dist/plugin.js"
+            "import": "./plugin.mjs",
+            "default": "./plugin.mjs"
         }
     },
     "main": "./dist/ui.cjs",
@@ -31,7 +31,10 @@
     "source": "src/index.ts",
     "types": "./dist/index.d.ts",
     "files": [
-        "dist"
+        "dist",
+        "plugin.js",
+        "README.md",
+        "LICENSE"
     ],
     "scripts": {
         "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx --format modern,cjs,esm --css inline --compress false",
@@ -47,7 +50,9 @@
         "singleQuote": true
     },
     "dependencies": {
+        "@hookform/resolvers": "^3.9.0",
         "@radix-ui/react-alert-dialog": "^1.1.1",
+        "@radix-ui/react-avatar": "^1.1.0",
         "@radix-ui/react-checkbox": "^1.1.1",
         "@radix-ui/react-collapsible": "^1.1.0",
         "@radix-ui/react-dialog": "^1.1.1",
@@ -64,7 +69,6 @@
         "@radix-ui/react-toggle-group": "^1.1.0",
         "@radix-ui/react-tooltip": "^1.1.2",
         "class-variance-authority": "^0.7.0",
-        "lucide-react": "^0.428.0",
         "react-hook-form": "^7.52.2",
         "tailwind-merge": "^2.5.2"
     },
@@ -81,9 +85,9 @@
         "typescript": "^5.5.4"
     },
     "peerDependencies": {
+        "lucide-react": "*",
         "react": "*",
         "react-dom": "*",
-        "lucide-react": "*",
         "tailwindcss": "*"
     },
     "postcss": {
