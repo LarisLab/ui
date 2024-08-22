@@ -50,6 +50,30 @@
         "semi": false,
         "singleQuote": true
     },
+    "release": {
+        "branches": [
+            "+([0-9])?(.{+([0-9]),x}).x",
+            "main",
+            "next",
+            "next-major",
+            {
+                "name": "beta",
+                "prerelease": true
+            },
+            {
+                "name": "alpha",
+                "prerelease": true
+            }
+        ],
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/changelog",
+            "@semantic-release/npm",
+            "@semantic-release/git",
+            "@semantic-release/github"
+        ]
+    },
     "dependencies": {
         "@hookform/resolvers": "^3.9.0",
         "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -91,33 +115,12 @@
         "react-dom": "*",
         "tailwindcss": "*"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "postcss": {
         "plugins": {
             "tailwindcss": {}
         }
-    },
-    "release": {
-        "branches": [
-            "+([0-9])?(.{+([0-9]),x}).x",
-            "main",
-            "next",
-            "next-major",
-            {
-                "name": "beta",
-                "prerelease": true
-            },
-            {
-                "name": "alpha",
-                "prerelease": true
-            }
-        ],
-        "plugins": [
-            "@semantic-release/commit-analyzer",
-            "@semantic-release/release-notes-generator",
-            "@semantic-release/changelog",
-            "@semantic-release/npm",
-            "@semantic-release/git",
-            "@semantic-release/github"
-        ]
     }
 }
