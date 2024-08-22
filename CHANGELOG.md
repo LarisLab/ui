@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/LarisLab/ui/compare/v1.0.0...v1.0.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* add plugin to release files ([d84e6ef](https://github.com/LarisLab/ui/commit/d84e6efedcdca2a76ae14e629854819bfc3ad0d2))
+
 # 1.0.0 (2024-08-22)
 
 
