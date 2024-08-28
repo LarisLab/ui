@@ -6,7 +6,7 @@ const meta = {
     title: 'Components/Accordion',
     component: Accordion,
     render: (args) => (
-        <Accordion className="w-[300px]" {...args}>
+        <Accordion className="w-72" {...args}>
             <AccordionItem value="item-1">
                 <AccordionTrigger>Is it accessible?</AccordionTrigger>
                 <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
