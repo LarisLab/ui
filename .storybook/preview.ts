@@ -15,7 +15,7 @@ const preview: Preview = {
         layout: 'centered',
         options: {
             storySort: {
-                order: ['Introduction', 'Colors', 'Components'],
+                order: ['Introduction', 'Colors', 'Changelog', 'Components'],
             },
         },
     },
