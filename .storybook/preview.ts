@@ -13,6 +13,11 @@ const preview: Preview = {
             },
         },
         layout: 'centered',
+        options: {
+            storySort: {
+                order: ['Introduction', 'Colors', 'Components'],
+            },
+        },
     },
     tags: ['autodocs'],
 }

@@ -6,7 +6,7 @@ const meta = {
     title: 'Components/Separator',
     component: Separator,
     render: (args) => (
-        <div>
+        <div {...args}>
             Top Text
             <Separator className="my-4" />
             <div className="flex h-5 items-center space-x-4 text-sm">
