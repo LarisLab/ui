@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { Slot, Slottable } from '@radix-ui/react-slot'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { type VariantProps } from 'class-variance-authority'
 import { classNames } from '../../utils/classnames'
 import { Loader2Icon } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip'
+import { createVariants } from '../../utils/cva'
 
-const buttonVariants = cva(
+const buttonVariants = createVariants(
     'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
     {
         variants: {
@@ -34,7 +35,7 @@ const buttonVariants = cva(
     },
 )
 
-const iconVariants = cva('mr-2', {
+const iconVariants = createVariants('mr-2', {
     variants: {
         size: {
             sm: '[&>svg]:h-3.5 [&>svg]:w-3.5',
@@ -48,7 +49,7 @@ const iconVariants = cva('mr-2', {
     },
 })
 
-const loaderVariants = cva('mr-2 animate-spin', {
+const loaderVariants = createVariants('mr-2 animate-spin', {
     variants: {
         size: {
             sm: '[&>svg]:h-4 [&>svg]:w-4',
