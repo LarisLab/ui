@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/LarisLab/ui/compare/v1.1.0...v1.1.1) (2024-09-04)
+
+
+### Bug Fixes
+
+* export correct variant types ([66e9a2e](https://github.com/LarisLab/ui/commit/66e9a2e9c86488de60840b7da01eaa70de9c1969))
+
 # [1.1.0](https://github.com/LarisLab/ui/compare/v1.0.1...v1.1.0) (2024-08-28)
 
 
