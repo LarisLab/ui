@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/LarisLab/ui/compare/v1.0.1...v1.1.0) (2024-08-28)
+
+
+### Features
+
+* accordion component ([8507530](https://github.com/LarisLab/ui/commit/85075309a43f5b9064debe1af548c295b731c7bd))
+* scroll area component ([a855fc4](https://github.com/LarisLab/ui/commit/a855fc4ec7905c7ae33224aa8ad4c641f8160c7f))
+
 ## [1.0.1](https://github.com/LarisLab/ui/compare/v1.0.0...v1.0.1) (2024-08-22)
 
 
