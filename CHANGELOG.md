@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/LarisLab/ui/compare/v1.1.3...v1.1.4) (2024-09-12)
+
+
+### Bug Fixes
+
+* add red border to invalid select trigger ([6e72873](https://github.com/LarisLab/ui/commit/6e72873dd4e5dd08f2b73941458d8049db751fa4))
+
 ## [1.1.3](https://github.com/LarisLab/ui/compare/v1.1.2...v1.1.3) (2024-09-12)
 
 
