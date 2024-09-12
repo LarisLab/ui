@@ -5,6 +5,20 @@ import React from 'react'
 const meta = {
     title: 'Components/Button',
     component: Button,
+    argTypes: {
+        variant: {
+            control: 'radio',
+        },
+        size: {
+            control: 'radio',
+        },
+        loading: {
+            control: 'boolean',
+        },
+        disabled: {
+            control: 'boolean',
+        },
+    },
     args: {
         variant: 'primary',
         children: 'Primary',
