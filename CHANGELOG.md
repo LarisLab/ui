@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/LarisLab/ui/compare/v1.1.2...v1.1.3) (2024-09-12)
+
+
+### Bug Fixes
+
+* wrap button tooltip to span ([ccfd095](https://github.com/LarisLab/ui/commit/ccfd0954a91add8f23c79ea2f0cafd1849cd3663))
+
 ## [1.1.2](https://github.com/LarisLab/ui/compare/v1.1.1...v1.1.2) (2024-09-12)
 
 
