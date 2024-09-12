@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/LarisLab/ui/compare/v1.1.1...v1.1.2) (2024-09-12)
+
+
+### Bug Fixes
+
+* disable all events when button is disabled ([249470b](https://github.com/LarisLab/ui/commit/249470ba33f87dd89565b34c9f26800a09d1a930))
+
 ## [1.1.1](https://github.com/LarisLab/ui/compare/v1.1.0...v1.1.1) (2024-09-04)
 
 
