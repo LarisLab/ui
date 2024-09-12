@@ -89,7 +89,9 @@ const Button = React.forwardRef<
         return (
             <TooltipProvider delayDuration={200}>
                 <Tooltip>
-                    <TooltipTrigger asChild>{button}</TooltipTrigger>
+                    <TooltipTrigger asChild>
+                        <span>{button}</span>
+                    </TooltipTrigger>
                     <TooltipContent>{tooltip}</TooltipContent>
                 </Tooltip>
             </TooltipProvider>
