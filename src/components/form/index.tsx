@@ -24,7 +24,7 @@ const Form = FormProvider
 
 type FormFieldContextValue<
     TFieldValues extends FieldValues = FieldValues,
-    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
     name: TName
 }
@@ -33,7 +33,7 @@ const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFi
 
 const FormField = <
     TFieldValues extends FieldValues = FieldValues,
-    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
     disabled,
     ...props
@@ -85,7 +85,7 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
                 <div ref={ref} className={classNames('space-y-2', className)} {...props} />
             </FormItemContext.Provider>
         )
-    },
+    }
 )
 FormItem.displayName = 'FormItem'
 
@@ -119,7 +119,7 @@ const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.Compon
                 {...props}
             />
         )
-    },
+    }
 )
 FormControl.displayName = 'FormControl'
 
@@ -135,7 +135,7 @@ const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
                 {...props}
             />
         )
-    },
+    }
 )
 FormDescription.displayName = 'FormDescription'
 
@@ -158,7 +158,7 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
                 {body}
             </p>
         )
-    },
+    }
 )
 FormMessage.displayName = 'FormMessage'
 
@@ -177,7 +177,7 @@ const FormSubmit = React.forwardRef<HTMLButtonElement, Parameters<typeof Button>
                 {children}
             </Button>
         )
-    },
+    }
 )
 FormSubmit.displayName = 'FormSubmit'
 
@@ -193,6 +193,7 @@ export {
     useFormController,
     useFormWatch,
     useFormState,
+    useFormContext,
     Form,
     FormItem,
     FormLabel,
