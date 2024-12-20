@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/LarisLab/ui/compare/v1.1.4...v1.1.5) (2024-11-07)
+
+
+### Bug Fixes
+
+* Dependencies update ([459f65b](https://github.com/LarisLab/ui/commit/459f65bff19db6c5ae5c205aca9f18c229068b9a))
+* Dialog icon fix ([450cf4d](https://github.com/LarisLab/ui/commit/450cf4d8c0297b50fdff6c2bfb67ab70b46b105a))
+
 ## [1.1.4](https://github.com/LarisLab/ui/compare/v1.1.3...v1.1.4) (2024-09-12)
 
 
