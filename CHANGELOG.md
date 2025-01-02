@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/LarisLab/ui/compare/v1.1.5...v1.2.0) (2024-12-20)
+
+
+### Bug Fixes
+
+* update dependencies to latest versions ([0548614](https://github.com/LarisLab/ui/commit/05486148f4991c1ea4067d2524f8c8bc3f20fb49))
+
+
+### Features
+
+* add sidebar component with customizable styles ([6d7fa3d](https://github.com/LarisLab/ui/commit/6d7fa3d5dad23b9e1175bf1d64b9eb50926e5119))
+* expose `useFormContext` helper ([f31f801](https://github.com/LarisLab/ui/commit/f31f801e871b64a5fed910a4dd7a4908922e1556))
+
 ## [1.1.5](https://github.com/LarisLab/ui/compare/v1.1.4...v1.1.5) (2024-11-07)
 
 
