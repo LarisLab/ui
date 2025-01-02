@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/LarisLab/ui/compare/v1.3.1...v1.4.0) (2025-01-02)
+
+
+### Features
+
+* sidebar component ([fac75f0](https://github.com/LarisLab/ui/commit/fac75f0f7a877c4c943f56350dbbe1027b4b690c))
+
 ## [1.3.1](https://github.com/LarisLab/ui/compare/v1.3.0...v1.3.1) (2025-01-02)
 
 
