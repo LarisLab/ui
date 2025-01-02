@@ -36,8 +36,8 @@ export function useAlertDialog({
                             {description && <AlertDialogDescription>{description}</AlertDialogDescription>}
                         </AlertDialogHeader>
                         <AlertDialogFooter>
-                            <AlertDialogCancel {...cancelAction} />
-                            <AlertDialogAction {...action}>Delete</AlertDialogAction>
+                            <AlertDialogCancel {...cancelAction} children={cancelAction?.children || 'Cancel'} />
+                            <AlertDialogAction {...action} children={action?.children || 'Confirm'} />
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialogPortal>
