@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/LarisLab/ui/compare/v1.2.0...v1.3.0) (2025-01-02)
+
+
+### Features
+
+* useAlertDialog shortcut ([2644419](https://github.com/LarisLab/ui/commit/2644419b65c6e9b41be05332be9889f96b0dc00c))
+
 # [1.2.0](https://github.com/LarisLab/ui/compare/v1.1.5...v1.2.0) (2024-12-20)
 
 
