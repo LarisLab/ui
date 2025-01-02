@@ -1,6 +1,6 @@
 {
     "name": "@larislab/ui",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "description": "UI react component library based on shadcn/ui",
     "homepage": "https://github.com/LarisLab/ui",
     "bugs": {

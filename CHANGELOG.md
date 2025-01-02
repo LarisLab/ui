@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/LarisLab/ui/compare/v1.3.0...v1.3.1) (2025-01-02)
+
+
+### Bug Fixes
+
+* update useAlertDialog default labels ([609ddf0](https://github.com/LarisLab/ui/commit/609ddf0a086934681e47b709a67919ff1e4be572))
+
 # [1.3.0](https://github.com/LarisLab/ui/compare/v1.2.0...v1.3.0) (2025-01-02)
 
 
