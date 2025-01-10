@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/LarisLab/ui/compare/v1.4.1...v1.5.0) (2025-01-10)
+
+
+### Features
+
+* add SimpleTooltip component for simplified tooltip usage ([65b24bf](https://github.com/LarisLab/ui/commit/65b24bf287f749006cc21de06983bdc94c512965))
+* enhance Button component with loading state and error handling, add UiProvider for context management ([9166a10](https://github.com/LarisLab/ui/commit/9166a105b83fd4d3922097a6f785fdf27b9f4b5c))
+
 ## [1.4.1](https://github.com/LarisLab/ui/compare/v1.4.0...v1.4.1) (2025-01-06)
 
 
