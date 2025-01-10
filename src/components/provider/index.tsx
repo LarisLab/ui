@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { createContext, useContext } from 'react'
 import { toast, Toaster } from '../toast'
 
@@ -35,7 +36,7 @@ function formatError(error: Error) {
     return error.message
 }
 
-export function UiProvider({ children, ...config }: { children: React.ReactNode } & Partial<UiConfig>) {
+export function UiProvider({ children, ...config }: React.PropsWithChildren<{}> & Partial<UiConfig>) {
     return (
         <Context.Provider
             value={{

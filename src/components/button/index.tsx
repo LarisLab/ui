@@ -49,7 +49,7 @@ const iconVariants = createVariants('', {
 
 const Button = React.forwardRef<
     HTMLButtonElement,
-    React.ComponentPropsWithoutRef<'button'> &
+    Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick'> &
         VariantProps<typeof buttonVariants> & {
             asChild?: boolean
             icon?: React.ReactNode
@@ -71,7 +71,7 @@ const Button = React.forwardRef<
             type={type || 'button'}
             onClick={(e) => {
                 if (props.onClick) {
-                    const result = props.onClick(e) as void | Promise<void>
+                    const result = props.onClick(e)
 
                     if (typeof result === 'object' && result && 'then' in result && 'catch' in result) {
                         setOnClickLoading(true)

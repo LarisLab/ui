@@ -1,7 +1,9 @@
 import type { Preview } from '@storybook/react'
+import { UiProvider } from '../src'
 
 import './global.css'
 import '@fontsource-variable/inter'
+import React from 'react'
 
 const preview: Preview = {
     parameters: {
@@ -20,6 +22,15 @@ const preview: Preview = {
         },
     },
     tags: ['autodocs'],
+    decorators: [
+        (Story) => (
+            <UiProvider>
+                <div className="flex gap-2 items-center justify-center w-full">
+                    <Story />
+                </div>
+            </UiProvider>
+        ),
+    ],
 }
 
 export default preview
