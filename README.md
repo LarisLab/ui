@@ -24,4 +24,10 @@ export default {
 }
 ```
 
+### 3. Wrap content to provider
+
+```tsx
+<UiProvider>...</UiProvider>
+```
+
 That's it! You're ready to use the components.

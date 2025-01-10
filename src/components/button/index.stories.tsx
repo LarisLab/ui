@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '.'
 import React from 'react'
+import { SaveIcon } from 'lucide-react'
 
 const meta = {
     title: 'Components/Button',
@@ -104,4 +105,23 @@ export const Loading: Story = {
     args: {
         loading: true,
     },
+}
+
+export const OnClick: Story = {
+    render: (args) => (
+        <div className="space-x-2">
+            <Button {...args} onClick={() => new Promise((resolve) => setTimeout(resolve, 1000))}>
+                Load
+            </Button>
+            <Button {...args} icon={<SaveIcon />} onClick={() => new Promise((resolve) => setTimeout(resolve, 1000))}>
+                Load with icon
+            </Button>
+            <Button
+                {...args}
+                onClick={() => new Promise((_, reject) => setTimeout(() => reject(new Error('Unknown error')), 1000))}
+            >
+                Load to fail
+            </Button>
+        </div>
+    ),
 }

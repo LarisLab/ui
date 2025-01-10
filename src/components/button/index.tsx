@@ -5,9 +5,10 @@ import { classNames } from '../../utils/classnames'
 import { Loader2Icon } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip'
 import { createVariants } from '../../utils/cva'
+import { useUiConfig } from '../provider'
 
 const buttonVariants = createVariants(
-    'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+    'whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
     {
         variants: {
             variant: {
@@ -29,10 +30,10 @@ const buttonVariants = createVariants(
             variant: 'primary',
             size: 'md',
         },
-    },
+    }
 )
 
-const iconVariants = createVariants('mr-2', {
+const iconVariants = createVariants('', {
     variants: {
         size: {
             sm: '[&>svg]:h-3.5 [&>svg]:w-3.5',
@@ -46,19 +47,6 @@ const iconVariants = createVariants('mr-2', {
     },
 })
 
-const loaderVariants = createVariants('mr-2 animate-spin', {
-    variants: {
-        size: {
-            sm: '[&>svg]:h-4 [&>svg]:w-4',
-            md: '[&>svg]:h-4 [&>svg]:w-4',
-            lg: '[&>svg]:h-6 [&>svg]:w-6',
-            icon: '[&>svg]:h-7 [&>svg]:w-7',
-        },
-    },
-    defaultVariants: {
-        size: 'md',
-    },
-})
 const Button = React.forwardRef<
     HTMLButtonElement,
     React.ComponentPropsWithoutRef<'button'> &
@@ -67,21 +55,47 @@ const Button = React.forwardRef<
             icon?: React.ReactNode
             loading?: boolean
             tooltip?: React.ReactNode
+            onClick?(e: React.MouseEvent<HTMLButtonElement>): void | Promise<void>
         }
 >(({ className, variant, size, asChild = false, children, loading, icon, disabled, tooltip, type, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
+    const [onClickLoading, setOnClickLoading] = React.useState(false)
+    const { errorHandler } = useUiConfig()
 
     const button = (
         <Comp
+            {...props}
             className={classNames(buttonVariants({ variant, size, className }))}
             ref={ref}
-            disabled={loading || disabled}
+            disabled={loading || disabled || onClickLoading}
             type={type || 'button'}
-            {...props}
+            onClick={(e) => {
+                if (props.onClick) {
+                    const result = props.onClick(e) as void | Promise<void>
+
+                    if (typeof result === 'object' && result && 'then' in result && 'catch' in result) {
+                        setOnClickLoading(true)
+                        result
+                            .then(() => setOnClickLoading(false))
+                            .catch((error) => {
+                                errorHandler(error instanceof Error ? error : new Error(String(error)))
+                                setOnClickLoading(false)
+                            })
+                    }
+                }
+            }}
         >
-            {loading && <Loader2Icon className={classNames(loaderVariants({ size }))} />}
-            {!loading && icon && <span className={classNames(iconVariants({ size }))}>{icon}</span>}
-            <Slottable>{children}</Slottable>
+            <span className="flex items-center justify-center gap-2">
+                {(loading || onClickLoading) && icon && (
+                    <span className={classNames('animate-spin', iconVariants({ size }))}>
+                        <Loader2Icon />
+                    </span>
+                )}
+                {!(loading || onClickLoading) && icon && (
+                    <span className={classNames(iconVariants({ size }))}>{icon}</span>
+                )}
+                <Slottable>{children}</Slottable>
+            </span>
         </Comp>
     )
 
