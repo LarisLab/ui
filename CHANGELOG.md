@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/LarisLab/ui/compare/v1.4.0...v1.4.1) (2025-01-06)
+
+
+### Bug Fixes
+
+* add sidebar color variables to plugin ([5077e78](https://github.com/LarisLab/ui/commit/5077e784b9b5fefc2c799605b087def22cf2a75f))
+
 # [1.4.0](https://github.com/LarisLab/ui/compare/v1.3.1...v1.4.0) (2025-01-02)
 
 
