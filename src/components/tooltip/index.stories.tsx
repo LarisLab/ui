@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '.'
+import { SimpleTooltip, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '.'
 import { Button } from '../button'
 
 const meta = {
@@ -27,3 +27,11 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+export const Simplified: Story = {
+    render: () => (
+        <SimpleTooltip tooltip={'Add to library'}>
+            <Button variant="outline">Hover</Button>
+        </SimpleTooltip>
+    ),
+}
