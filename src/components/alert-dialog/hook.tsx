@@ -39,21 +39,6 @@ export function useAlertDialog({
                         <AlertDialogFooter>
                             <AlertDialogCancel {...cancelAction} children={cancelAction?.children || 'Cancel'} />
                             <AlertDialogAction {...action} children={action?.children || 'Confirm'} />
-                            <Button
-                                {...action}
-                                onClick={(event) => {
-                                    const result = action?.onClick?.(event)
-
-                                    if (result && typeof result === 'object' && 'then' in result) {
-                                        return result.then(() => {
-                                            setOpen(false)
-                                        })
-                                    } else {
-                                        setOpen(false)
-                                    }
-                                }}
-                                children={action?.children || 'Confirm'}
-                            />
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialogPortal>
