@@ -10,6 +10,7 @@ import {
     AlertDialogPortal,
     AlertDialogTitle,
 } from './alert-dialog'
+import { Button } from '../button'
 
 export function useAlertDialog({
     title,
@@ -20,7 +21,7 @@ export function useAlertDialog({
     title: React.ReactNode
     description?: React.ReactNode
     cancelAction?: React.ComponentProps<typeof AlertDialogCancel>
-    action?: React.ComponentProps<typeof AlertDialogAction>
+    action?: React.ComponentProps<typeof Button>
 }) {
     const [open, setOpen] = React.useState(false)
 
@@ -38,6 +39,21 @@ export function useAlertDialog({
                         <AlertDialogFooter>
                             <AlertDialogCancel {...cancelAction} children={cancelAction?.children || 'Cancel'} />
                             <AlertDialogAction {...action} children={action?.children || 'Confirm'} />
+                            <Button
+                                {...action}
+                                onClick={(event) => {
+                                    const result = action?.onClick?.(event)
+
+                                    if (result && typeof result === 'object' && 'then' in result) {
+                                        return result.then(() => {
+                                            setOpen(false)
+                                        })
+                                    } else {
+                                        setOpen(false)
+                                    }
+                                }}
+                                children={action?.children || 'Confirm'}
+                            />
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialogPortal>

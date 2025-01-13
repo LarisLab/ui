@@ -66,31 +66,46 @@ AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 const AlertDialogDescription = React.forwardRef<
     React.ElementRef<typeof AlertDialogPrimitive.Description>,
     React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-    <AlertDialogPrimitive.Description
-        ref={ref}
-        className={classNames('text-sm text-muted-foreground', className)}
-        {...props}
-    />
-))
+>(({ ...props }, ref) => <AlertDialogPrimitive.Description ref={ref} {...props} />)
 AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName
 
 const AlertDialogAction = React.forwardRef<
-    React.ElementRef<typeof AlertDialogPrimitive.Action>,
-    React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ ...props }, ref) => (
-    <Button asChild>
-        <AlertDialogPrimitive.Action ref={ref} {...props} />
-    </Button>
-))
+    React.ElementRef<typeof Button>,
+    React.ComponentPropsWithoutRef<typeof Button>
+>(({ onClick, children, ...props }, ref) => {
+    const hiddenRef = React.useRef<HTMLButtonElement>(null)
+    return (
+        <Button
+            {...props}
+            onClick={(event) => {
+                event.stopPropagation()
+                const result = onClick?.(event)
+
+                if (result && typeof result === 'object' && 'then' in result) {
+                    return result.then(() => {
+                        hiddenRef.current?.click()
+                    })
+                } else {
+                    hiddenRef.current?.click()
+                }
+            }}
+            ref={ref}
+        >
+            <>
+                {children}
+                <AlertDialogPrimitive.Action ref={hiddenRef} className="hidden" />
+            </>
+        </Button>
+    )
+})
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 
 const AlertDialogCancel = React.forwardRef<
     React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
-    React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
->(({ className, ...props }, ref) => (
-    <Button variant="outline" asChild>
-        <AlertDialogPrimitive.Cancel ref={ref} className={classNames('mt-2 sm:mt-0', className)} {...props} />
+    React.ComponentPropsWithoutRef<typeof Button>
+>(({ className, children, ...props }, ref) => (
+    <Button variant="outline" {...props} asChild>
+        <AlertDialogPrimitive.Cancel ref={ref} className={classNames('mt-2 sm:mt-0', className)} children={children} />
     </Button>
 ))
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName

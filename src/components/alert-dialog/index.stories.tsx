@@ -10,6 +10,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
+    useAlertDialog,
 } from '.'
 import { Button } from '../button'
 
@@ -47,3 +48,30 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
     args: {},
 }
+
+export const Async: Story = {
+    render: (args) => {
+        return (
+            <AlertDialog {...args}>
+                <AlertDialogTrigger asChild>
+                    <Button variant="outline">Show Dialog</Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            This action cannot be undone. This will permanently delete your account and remove your data
+                            from our servers.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction onClick={() => new Promise((resolve) => setTimeout(resolve, 2000))}>
+                            Continue
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+        )
+    },
+} satisfies Meta<typeof AlertDialog>

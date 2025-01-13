@@ -28,14 +28,18 @@ export function SimpleTooltip({
     children,
     tooltip,
     className,
+    asChild,
     ...args
-}: { tooltip: React.ReactNode; children: React.ReactNode; className?: string } & React.ComponentPropsWithoutRef<
-    typeof TooltipProvider
->) {
+}: {
+    tooltip: React.ReactNode
+    children: React.ReactNode
+    className?: string
+    asChild?: boolean
+} & React.ComponentPropsWithoutRef<typeof TooltipProvider>) {
     return (
         <TooltipProvider {...args}>
             <Tooltip>
-                <TooltipTrigger asChild>{children}</TooltipTrigger>
+                <TooltipTrigger asChild={asChild}>{children}</TooltipTrigger>
                 <TooltipContent className={className}>{tooltip}</TooltipContent>
             </Tooltip>
         </TooltipProvider>
