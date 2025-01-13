@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/LarisLab/ui/compare/v1.5.0...v1.6.0) (2025-01-10)
+
+
+### Features
+
+* button onClick fix ([e07e8b3](https://github.com/LarisLab/ui/commit/e07e8b3c314a0485d0c22f6415e0892f3f42410f))
+
 # [1.5.0](https://github.com/LarisLab/ui/compare/v1.4.1...v1.5.0) (2025-01-10)
 
 
