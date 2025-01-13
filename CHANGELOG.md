@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/LarisLab/ui/compare/v1.6.0...v1.6.1) (2025-01-13)
+
+
+### Bug Fixes
+
+* enhance AlertDialog component with async action handling and improve Button integration ([f38a855](https://github.com/LarisLab/ui/commit/f38a8559f92fbf13d097594a378abd9ac4d83fd6))
+
 # [1.6.0](https://github.com/LarisLab/ui/compare/v1.5.0...v1.6.0) (2025-01-10)
 
 
