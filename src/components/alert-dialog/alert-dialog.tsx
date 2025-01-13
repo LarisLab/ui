@@ -93,7 +93,9 @@ const AlertDialogAction = React.forwardRef<
         >
             <>
                 {children}
-                <AlertDialogPrimitive.Action ref={hiddenRef} className="hidden" />
+                <AlertDialogPrimitive.Action ref={hiddenRef} className="hidden" asChild>
+                    <span />
+                </AlertDialogPrimitive.Action>
             </>
         </Button>
     )
