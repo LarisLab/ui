@@ -26,10 +26,12 @@ function formatError(error: Error) {
         error instanceof URIError ||
         error instanceof ReferenceError
     ) {
+        console.error(error)
         return 'Something went wrong, please try again'
     } else if (error.message === 'Failed to fetch') {
         return 'Failed to connect to the server, please check your internet connection'
     } else if (error.message === 'All Promises rejected') {
+        console.error(error)
         return 'Something went wrong, please try again'
     }
 
@@ -40,8 +42,8 @@ export function UiProvider({ children, ...config }: React.PropsWithChildren<{}> 
     return (
         <Context.Provider
             value={{
-                ...config,
                 ...defaultUiConfig,
+                ...config,
             }}
         >
             <Toaster />
