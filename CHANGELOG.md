@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/LarisLab/ui/compare/v1.6.2...v1.7.0) (2025-01-22)
+
+
+### Bug Fixes
+
+* button loader fix ([d58b908](https://github.com/LarisLab/ui/commit/d58b9085d3554cec9366ed984e63ae08957c8beb))
+* fix button span wrapping ([49e11d0](https://github.com/LarisLab/ui/commit/49e11d088a828649a6849a7ad7d7e50659929f0d))
+* fix custom error handler and log errors in formatError ([438d3c0](https://github.com/LarisLab/ui/commit/438d3c09dbffd42a1b607f5eecdb3e3f62609b74))
+
+
+### Features
+
+* add async event handling to Switch and Toggle components ([51cb57b](https://github.com/LarisLab/ui/commit/51cb57b19643f8cee1e520331b2a193ed6f642b4))
+
 ## [1.6.2](https://github.com/LarisLab/ui/compare/v1.6.1...v1.6.2) (2025-01-13)
 
 
