@@ -20,8 +20,8 @@ const buttonVariants = createVariants(
                 link: 'text-primary underline-offset-4 hover:underline',
             },
             size: {
-                md: 'h-9 px-4 py-2',
                 sm: 'h-8 rounded-md px-3',
+                md: 'h-9 px-4 py-2',
                 lg: 'h-11 rounded-md px-8',
                 icon: 'h-10 w-10',
             },
@@ -33,7 +33,7 @@ const buttonVariants = createVariants(
     }
 )
 
-const iconVariants = createVariants('', {
+const iconVariants = createVariants('mr-2', {
     variants: {
         size: {
             sm: '[&>svg]:h-3.5 [&>svg]:w-3.5',
@@ -85,17 +85,13 @@ const Button = React.forwardRef<
                 }
             }}
         >
-            <span className="flex items-center justify-center gap-2">
-                {(loading || onClickLoading) && icon && (
-                    <span className={classNames('animate-spin', iconVariants({ size }))}>
-                        <Loader2Icon />
-                    </span>
-                )}
-                {!(loading || onClickLoading) && icon && (
-                    <span className={classNames(iconVariants({ size }))}>{icon}</span>
-                )}
-                <Slottable>{children}</Slottable>
-            </span>
+            {(loading || onClickLoading) && icon && (
+                <span className={classNames('animate-spin', iconVariants({ size }))}>
+                    <Loader2Icon />
+                </span>
+            )}
+            {!(loading || onClickLoading) && icon && <span className={classNames(iconVariants({ size }))}>{icon}</span>}
+            <Slottable>{children}</Slottable>
         </Comp>
     )
 
