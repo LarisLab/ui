@@ -20,3 +20,12 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
     args: {},
 }
+
+export const Async: Story = {
+    render: (args) => (
+        <div className="flex items-center space-x-2">
+            <Switch id="airplane-mode" {...args} onCheckedChange={() => new Promise((r) => setTimeout(r, 2000))} />
+            <Label htmlFor="airplane-mode">Airplane Mode</Label>
+        </div>
+    ),
+}

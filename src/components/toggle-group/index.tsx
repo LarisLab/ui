@@ -22,7 +22,7 @@ const toggleVariants = createVariants(
             variant: 'ghost',
             size: 'md',
         },
-    },
+    }
 )
 
 const ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants>>({
@@ -59,7 +59,7 @@ const ToggleGroupItem = React.forwardRef<
                     variant: context.variant || variant,
                     size: context.size || size,
                 }),
-                className,
+                className
             )}
             {...props}
         >
