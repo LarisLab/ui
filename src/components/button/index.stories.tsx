@@ -108,7 +108,7 @@ export const Loading: Story = {
     },
 }
 
-export const OnClick: Story = {
+export const Async: Story = {
     render: (args) => (
         <div className="space-x-2">
             <Button {...args} onClick={() => new Promise((resolve) => setTimeout(resolve, 1000))}>
