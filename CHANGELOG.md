@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/LarisLab/ui/compare/v1.6.1...v1.6.2) (2025-01-13)
+
+
+### Bug Fixes
+
+* update AlertDialogAction to use asChild prop and adjust Button styles for better alignment ([bec4da8](https://github.com/LarisLab/ui/commit/bec4da8f12e3417dd3d92e9e51ab5ba16a94c201))
+
 ## [1.6.1](https://github.com/LarisLab/ui/compare/v1.6.0...v1.6.1) (2025-01-13)
 
 
