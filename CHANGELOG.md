@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/LarisLab/ui/compare/v1.7.0...v1.7.1) (2025-02-07)
+
+
+### Bug Fixes
+
+* fixed window object on SSR ([657430d](https://github.com/LarisLab/ui/commit/657430d676d96c9244309cd042ef2a1f65487d75))
+
 # [1.7.0](https://github.com/LarisLab/ui/compare/v1.6.2...v1.7.0) (2025-01-22)
 
 
