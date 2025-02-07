@@ -626,10 +626,9 @@ const SidebarMenuSubButton = React.forwardRef<
 SidebarMenuSubButton.displayName = 'SidebarMenuSubButton'
 
 const useIsMobile = (mobileScreenSize = 768) => {
-    if (typeof window.matchMedia !== 'function') {
-        throw Error('matchMedia not supported by browser!')
-    }
-    const [isMobile, setIsMobile] = React.useState(window.matchMedia(`(max-width: ${mobileScreenSize}px)`).matches)
+    const [isMobile, setIsMobile] = React.useState(
+        typeof window !== 'undefined' && window.matchMedia(`(max-width: ${mobileScreenSize}px)`).matches
+    )
 
     const checkIsMobile = React.useCallback((event: MediaQueryListEvent) => {
         setIsMobile(event.matches)
