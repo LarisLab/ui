@@ -1,3 +1,5 @@
+'use client'
+
 export * from './components/accordion'
 export * from './components/alert'
 export * from './components/alert-dialog'
@@ -28,6 +30,7 @@ export * from './components/toast'
 export * from './components/toggle'
 export * from './components/toggle-group'
 export * from './components/tooltip'
+export * from './components/popover'
 
 export * from './components/provider'
 export * from './utils/classnames'
