@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/LarisLab/ui/compare/v1.7.1...v1.8.0) (2025-04-08)
+
+
+### Features
+
+* add Calendar and Popover components ([0c61144](https://github.com/LarisLab/ui/commit/0c61144534dd8df7191f7524c26ebb19b3760dd1))
+
 ## [1.7.1](https://github.com/LarisLab/ui/compare/v1.7.0...v1.7.1) (2025-02-07)
 
 
