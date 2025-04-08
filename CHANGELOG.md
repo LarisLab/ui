@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/LarisLab/ui/compare/v1.8.0...v1.8.1) (2025-04-08)
+
+
+### Bug Fixes
+
+* export Calendar component from index ([2c08107](https://github.com/LarisLab/ui/commit/2c0810741e16ac86a325859e4e7fd09229ed51f6))
+
 # [1.8.0](https://github.com/LarisLab/ui/compare/v1.7.1...v1.8.0) (2025-04-08)
 
 
