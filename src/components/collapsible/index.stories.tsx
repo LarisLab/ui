@@ -6,26 +6,17 @@ import { Button } from '../button'
 const meta = {
     title: 'Components/Collapsible',
     component: Collapsible,
-    argTypes: {
-        children: {
-            table: {
-                disable: true,
-            },
-        },
-    },
-    args: {
-        children: [
+    render: (args) => (
+        <Collapsible {...args}>
             <CollapsibleTrigger asChild>
                 <Button variant="outline">Trigger</Button>
-            </CollapsibleTrigger>,
-            <CollapsibleContent>Content</CollapsibleContent>,
-        ],
-    },
+            </CollapsibleTrigger>
+            <CollapsibleContent>Content</CollapsibleContent>
+        </Collapsible>
+    ),
 } satisfies Meta<typeof Collapsible>
-
-export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-    args: {},
-}
+export default meta
+
+export const Default: Story = {}

@@ -10,11 +10,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-    args: {
-        children: 'Default',
-    },
-}
+export const Default: Story = {}
 
 export const Variants: Story = {
     render: (args) => (
