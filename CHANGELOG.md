@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/LarisLab/ui/compare/v1.8.1...v1.8.2) (2025-04-09)
+
+
+### Bug Fixes
+
+* update calendar component ([ae1374a](https://github.com/LarisLab/ui/commit/ae1374af33644a9e3b444ef7c27422dd0c6975f3))
+
 ## [1.8.1](https://github.com/LarisLab/ui/compare/v1.8.0...v1.8.1) (2025-04-08)
 
 
