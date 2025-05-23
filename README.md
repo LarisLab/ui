@@ -9,6 +9,9 @@ Read [Documentation 📘](https://ui.larislab.com)
 
 ## Installation
 
+[![npm version](https://badge.fury.io/js/@larislab%2Fui.svg)](https://www.npmjs.com/package/@larislab/ui)
+[![npm](https://img.shields.io/npm/dt/@larislab/ui)](https://www.npmjs.com/package/@larislab/ui)
+
 ### 1. Install package
 
 ```bash
