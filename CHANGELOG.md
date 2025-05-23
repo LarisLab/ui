@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/LarisLab/ui/compare/v1.8.2...v1.9.0) (2025-05-23)
+
+
+### Features
+
+* Markdown component ([2f162d8](https://github.com/LarisLab/ui/commit/2f162d8bea659faed1e7f2aadd1d1ab3ced9bdf8))
+
 ## [1.8.2](https://github.com/LarisLab/ui/compare/v1.8.1...v1.8.2) (2025-04-09)
 
 
