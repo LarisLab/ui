@@ -34,15 +34,12 @@ const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFi
 const FormField = <
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->({
-    disabled,
-    ...props
-}: ControllerProps<TFieldValues, TName>) => {
-    const { isLoading, isSubmitting } = useFormState()
-
+>(
+    props: ControllerProps<TFieldValues, TName>
+) => {
     return (
         <FormFieldContext.Provider value={{ name: props.name }}>
-            <Controller disabled={disabled || isLoading || isSubmitting} {...props} />
+            <Controller {...props} />
         </FormFieldContext.Provider>
     )
 }
@@ -109,6 +106,7 @@ FormLabel.displayName = 'FormLabel'
 const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
     ({ ...props }, ref) => {
         const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
+        const { isLoading, isSubmitting } = useFormState()
 
         return (
             <Slot
@@ -116,7 +114,11 @@ const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.Compon
                 id={formItemId}
                 aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
                 aria-invalid={!!error}
-                {...props}
+                aria-disabled={isLoading || isSubmitting}
+                {...{
+                    ...props,
+                    disabled: isLoading || isSubmitting,
+                }}
             />
         )
     }
