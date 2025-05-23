@@ -5,6 +5,7 @@ import { Badge } from '.'
 const meta = {
     title: 'Components/Badge',
     component: Badge,
+    render: (args) => <Badge {...args}>Badge</Badge>,
 } satisfies Meta<typeof Badge>
 
 export default meta
