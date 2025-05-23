@@ -32,6 +32,7 @@ export * from './components/toggle-group'
 export * from './components/tooltip'
 export * from './components/popover'
 export * from './components/calendar'
+export * from './components/markdown'
 
 export * from './components/provider'
 export * from './utils/classnames'
