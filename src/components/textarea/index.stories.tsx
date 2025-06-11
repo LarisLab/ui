@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import * as React from 'react'
 import { Textarea } from '.'
 
 const meta = {
@@ -18,6 +17,8 @@ export const Default: Story = {}
 
 export const AutoSize: Story = {
     args: {
-        autoSize: true,
+        // autoSize: true,
+        minRows: 2,
+        maxRows: 4,
     },
 }
