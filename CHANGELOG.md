@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/LarisLab/ui/compare/v1.9.1...v1.9.2) (2025-06-11)
+
+
+### Bug Fixes
+
+* improved Textarea autoSize with minRows & maxRows support ([ff77d52](https://github.com/LarisLab/ui/commit/ff77d52abe83367a09ee5a43978f76459a591bb2))
+
 ## [1.9.1](https://github.com/LarisLab/ui/compare/v1.9.0...v1.9.1) (2025-05-23)
 
 
