@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/LarisLab/ui/compare/v1.9.0...v1.9.1) (2025-05-23)
+
+
+### Bug Fixes
+
+* form field undefined value fix when loading due to disabled state ([90c1062](https://github.com/LarisLab/ui/commit/90c1062fe9e2b8462f7110e8a1cfc1980114d0a2))
+
 # [1.9.0](https://github.com/LarisLab/ui/compare/v1.8.2...v1.9.0) (2025-05-23)
 
 
