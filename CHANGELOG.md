@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/LarisLab/ui/compare/v1.9.3...v1.9.4) (2025-07-28)
+
+
+### Bug Fixes
+
+* zod4 support ([0d59cc2](https://github.com/LarisLab/ui/commit/0d59cc26a1a42f8116924a59132cb818c259946d))
+
 ## [1.9.3](https://github.com/LarisLab/ui/compare/v1.9.2...v1.9.3) (2025-06-12)
 
 
