@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/LarisLab/ui/compare/v1.9.2...v1.9.3) (2025-06-12)
+
+
+### Bug Fixes
+
+* update select component ([094aa1a](https://github.com/LarisLab/ui/commit/094aa1a47ae621986ed4b4f16d0b5f297c02eed1))
+
 ## [1.9.2](https://github.com/LarisLab/ui/compare/v1.9.1...v1.9.2) (2025-06-11)
 
 
